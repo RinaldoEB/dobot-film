@@ -37,7 +37,7 @@ function App() {
         <div className="logo">
           <a href="">DoBot Film</a>
         </div>
-        <search>
+        <search className="search-film">
           <input type="text" placeholder="Search" className="search" onChange={(e) => setSearch(e.target.value)} value={search} onKeyDown={(e) => e.key === "Enter" && handleSearch()} />
           <button type="button" className="submit" onClick={handleSearch} >Search</button>
         </search>
