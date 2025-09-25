@@ -30,6 +30,7 @@ function App() {
       .catch(err => console.log(err));
   }, []);
 
+
   return (
     <div className="App">
       {/* nav */}
@@ -63,8 +64,8 @@ function App() {
                   <img src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`} alt="" />
                 </div>
                 <div className="content-film">
-                  <h2>{movie.title}</h2>
-                  <p>{movie.overview}</p>
+                  <h4>{movie.title}</h4>
+                  <p>{Math.round(movie.vote_average)}/10 ⭐</p>
                 </div>
               </div>
           ))}
