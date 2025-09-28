@@ -19,7 +19,7 @@ body {
 nav {
   display: flex;
   justify-content: space-around;
-  background-color: var(--light-color);
+  background-color: #454444;
   padding: 0.5rem;
 
 }
@@ -37,6 +37,10 @@ nav {
   font-weight: bold;
   font-size: 1.5rem;
   padding: 0.5rem;
+}
+
+.search-film {
+  width: 300px;
 }
 
 search {  
@@ -99,6 +103,7 @@ li a {
 
 /* Card styles */
 .card-film {
+  text-decoration: none;
   /* border-radius: 8px; */
   box-shadow: 0 4px 8px rgba(0,0,0,0.1);
   overflow: hidden;
