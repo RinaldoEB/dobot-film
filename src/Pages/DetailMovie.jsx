@@ -16,7 +16,11 @@ const DetailMovie = () => {
     }, [id]);
 
     return (
-        <h1>{detail.title}</h1>
+        <>
+            <img src={`https://image.tmdb.org/t/p/w500/${detail.poster_path}`} alt="" />
+            <h1>{detail.title}</h1>
+            <p>{detail.overview}</p>
+        </>
     )
 }
 
