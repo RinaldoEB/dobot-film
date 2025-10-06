@@ -1,8 +1,9 @@
 :root {
-  --primary-color: #F2F2F2;
-  --secondary-color: #EAE4D5;
-  --light-color: #B6B09F;
-  --dark-color: #262626;
+  --primary-color: #ffffff;
+  --secondary-color: #1a1a1a;
+  --light-color: #333333;
+  --dark-color: #121212;
+  --accent-color: #f5f5f5;
 }
 
 body {
@@ -15,13 +16,12 @@ body {
   background-color: var(--dark-color);
 }
 
-/* navbar */ 
+/* navbar */
 nav {
   display: flex;
   justify-content: space-around;
-  background-color: #454444;
-  padding: 0.5rem;
-
+  background-color: var(--dark-color);
+  padding: 1rem;
 }
 
 .logo  {
@@ -43,29 +43,33 @@ nav {
   width: 300px;
 }
 
-search {  
+search {
   display: flex;
   align-items: center;
-  color: #fff;
+  color: var(--primary-color);
   border: none;
-  border-radius: 4px;
 }
 
 search input {
   width: 100%;
   border: none;
   padding: 0.5rem;
-  border-radius: 4px;
+  background-color: var(--light-color);
+  color: var(--primary-color);
 }
 
 search button {
-  color: white;
-  background-color: var(--dark-color);
+  color: var(--primary-color);
+  background-color: var(--light-color);
   border: none;
   padding: 0.5rem;
-  border-radius: 4px;
   cursor: pointer;
   margin-left: 0.5rem;
+  transition: background-color 0.3s ease;
+}
+
+search button:hover {
+  background-color: var(--accent-color);
 }
 
 ul {
@@ -84,10 +88,13 @@ li {
 
 li a {
   text-decoration: none;
-  color: #fff;
+  color: var(--primary-color);
   padding: 0.5rem;
-  border-radius: 4px;
-  transition: background-color 0.3s ease;
+  transition: color 0.3s ease;
+}
+
+li a:hover {
+  color: var(--accent-color);
 }
 
 /* main */
@@ -104,17 +111,14 @@ li a {
 /* Card styles */
 .card-film {
   text-decoration: none;
-  /* border-radius: 8px; */
-  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
   overflow: hidden;
   max-width: 200px;
   margin: 1rem 1rem;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition: transform 0.3s ease;
 }
 
 .card-film:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+  transform: scale(1.05);
 }
 
 .img-film img {
@@ -128,13 +132,71 @@ li a {
 }
 
 .content-film h4 {
-  /* font-size: 1.25rem; */
   margin: 0 0 0.5rem 0;
   color: var(--primary-color);
 }
 
 .content-film p {
   font-size: 1rem;
-  color: #666;
+  color: var(--accent-color);
   margin: 0;
+}
+
+.detail-movie-container {
+  display: flex;
+  background-size: cover;
+  color: var(--primary-color);
+  overflow: hidden;
+}
+
+.detail-movie-poster img {
+  width: 300px;
+  height: auto;
+  padding: 50px;
+  object-fit: cover;
+}
+
+.detail-movie-info {
+  padding: 1.5rem;
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  /* flex: 1; */
+}
+
+.detail-movie-title {
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.detail-movie-meta p {
+  margin: 0.25rem 0;
+  font-weight: 600;
+}
+
+.detail-movie-overview {
+  margin-top: 1rem;
+}
+
+.detail-movie-overview h2 {
+  margin-bottom: 0.5rem;
+}
+
+.detail-movie-additional {
+  margin-top: 1.5rem;
+}
+
+.detail-movie-additional h2 {
+  margin-bottom: 0.5rem;
+}
+
+
+.actor-movie-container {
+  display: flex;
+  flex-wrap: wrap;
+  background-size: cover;
+  color: var(--primary-color);
 }
