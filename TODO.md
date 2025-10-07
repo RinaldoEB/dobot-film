@@ -1,9 +1,5 @@
-# TODO for Minimalist Borderless Design Redesign
+# TODO: Create Dropdown for Genre List in Navbar
 
-- [x] Update color variables in App.css for dark minimalist palette
-- [x] Remove shadows and borders from movie cards and containers
-- [x] Simplify nav bar styling for clean, minimal look
-- [x] Update buttons and inputs for borderless, modern appearance
-- [x] Adjust detail movie layout to match borderless design
-- [x] Add subtle hover animations for beauty
-- [x] Make poster larger in detail movie page
+- [x] Modify Navbar.jsx to add dropdown functionality for genres (using CSS hover)
+- [x] Add CSS styles for the dropdown menu
+- [ ] Test the dropdown by running the app
