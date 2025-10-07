@@ -142,6 +142,8 @@ li a:hover {
   margin: 0;
 }
 
+/* detail movie */
+
 .detail-movie-container {
   display: flex;
   background-size: cover;
@@ -194,9 +196,33 @@ li a:hover {
 }
 
 
+.cast-title {
+  padding: 20px;
+  text-align: center;
+  color: var(--primary-color);
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+  font-size: 2rem;
+  font-weight: bold;
+}
+
 .actor-movie-container {
+  padding: 20px;
   display: flex;
   flex-wrap: wrap;
   background-size: cover;
   color: var(--primary-color);
+  gap: 5px;
+}
+
+.actor-card {
+    transition: transform 0.3s ease;
+}
+
+.actor-card:hover {
+  transform: scale(1.05);
+}
+
+.actor-movie-container img {
+  width: 70%;
 }

@@ -55,11 +55,13 @@ const DetailMovie = () => {
                     </div>
                 </div>
             </div>
+            <h1 className="cast-title">Cast</h1>
             <div className="actor-movie-container">
                 {cast.slice(0,10).map((actor) => (
                     <div className="actor-card" key={actor.id}>
                         <img src={`https://image.tmdb.org/t/p/w200/${actor.profile_path}`} alt="" />
-                        <p>{actor.name}</p>
+                        <p style={{ fontWeight : "bold" }}>{actor.name}</p>
+                        <p>{actor.character}</p>
                     </div>
                 ))}
             </div>
