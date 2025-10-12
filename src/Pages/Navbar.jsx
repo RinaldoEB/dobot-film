@@ -1,11 +1,26 @@
 import { useState } from "react";
 import { API_KEY } from "../config";
-import { useNavigate } from "react-router-dom";
+import { data, useNavigate, useParams } from "react-router-dom";
 const Navbar = ({setMovies}) => {
   const navigate = useNavigate();
   const[genres, setGenres] = useState([]);
-  const[isDropdownOpen, setIsDropdownOpen] = useState(false);
   const[search, setSearch] = useState("");
+  const fetchGenres = () => {
+    const genre_URL = `https://api.themoviedb.org/3/genre/movie/list?api_key=${API_KEY}`
+    fetch(genre_URL)
+    .then(res => res.json())
+    .then(data => setGenres(data.genres))
+    .catch(err => console.log(err));
+  }
+
+  const handleGenreClick = (id) => {
+    const URL = `https://api.themoviedb.org/3/discover/movie?api_key=${API_KEY}&with_genres=${id}`;
+    fetch(URL)
+    .then(res => res.json())
+    .then(data => setMovies(data.results))
+    .catch(err => console.log(err));
+  }
+  
        const handleSearch = () => {
             if(search.trim() !== ""){ 
               navigate(`/`);
@@ -19,6 +34,7 @@ const Navbar = ({setMovies}) => {
             }
             
           }
+
     return (
      <nav>
         <div className="logo">
@@ -34,13 +50,11 @@ const Navbar = ({setMovies}) => {
           </li>
           <li>
             <div className="genre-container">
-              <span>Genre</span>
+              <span onMouseEnter={() => { if (genres.length === 0) fetchGenres(); }}>Genre</span>
               <ul className="genre-list">
-                <li><a href="">Action</a></li>
-                <li><a href="">Horor</a></li>
-                <li><a href="">Comedy</a></li>
-                <li><a href="">Romance</a></li>
-
+                {genres.map((genre) => (
+                  <li key={genre.id} onClick={() => handleGenreClick(genre.id)}>{genre.name}</li>
+                ))}
               </ul>
             </div>
           </li>
