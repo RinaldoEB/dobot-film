@@ -17,7 +17,7 @@ const Home = ({movies, setMovies}) => {
 
       {/* main */}
       <main>
-        <div className="container">
+        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 mx-auto container">
           {movies.map((movie) => (
               <a href={`/detail/${movie.id}`} className="card-film" key={movie.id}>
                 <div className="img-film">

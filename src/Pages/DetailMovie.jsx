@@ -32,7 +32,7 @@ const DetailMovie = () => {
 
     return (
         <>
-            <div className="detail-movie-container" style={{  backgroundImage: ` linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(https://image.tmdb.org/t/p/original/${detail.backdrop_path})` }}>
+            <div className="flex text-white detail-movie-container" style={{  backgroundImage: ` linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(https://image.tmdb.org/t/p/original/${detail.backdrop_path})` }}>
                 <div className="detail-movie-poster">
                     <img src={`https://image.tmdb.org/t/p/w500/${detail.poster_path}`} alt={detail.title} />
                 </div>
@@ -56,7 +56,7 @@ const DetailMovie = () => {
                 </div>
             </div>
             <h1 className="cast-title">Cast</h1>
-            <div className="actor-movie-container">
+            <div className="container grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 mx-auto gap-4">
                 {cast.slice(0,10).map((actor) => (
                     <div className="actor-card" key={actor.id}>
                         <img src={`https://image.tmdb.org/t/p/w200/${actor.profile_path}`} alt="" />

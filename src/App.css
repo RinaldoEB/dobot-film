@@ -31,12 +31,11 @@ nav {
 }
 
 .logo a {
-  text-decoration: none;
+  /* text-decoration: none;
   font-style: italic;
-  color: var(--primary-color);
-  font-weight: bold;
-  font-size: 1.5rem;
-  padding: 0.5rem;
+  /* color: var(--primary-color); */
+  /* font-weight: bold;
+  padding: 0.5rem; */
 }
 
 .search-film {
@@ -51,11 +50,11 @@ search {
 }
 
 search input {
-  width: 100%;
+  /* width: 100%;
   border: none;
   padding: 0.5rem;
   background-color: var(--light-color);
-  color: var(--primary-color);
+  color: var(--primary-color); */
 }
 
 search button {
@@ -100,10 +99,10 @@ li a:hover {
 /* main */
 
 .container {
-  display: grid;
+  /* display: grid;
   grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
   gap: 1rem;
-  padding: 1rem;
+  padding: 1rem; */
 }
 
 
@@ -112,7 +111,7 @@ li a:hover {
 .card-film {
   text-decoration: none;
   overflow: hidden;
-  max-width: 200px;
+  /* max-width: 200px; */
   margin: 1rem 1rem;
   transition: transform 0.3s ease;
 }
@@ -152,7 +151,7 @@ li a:hover {
 }
 
 .detail-movie-poster img {
-  width: 300px;
+  width: 500px;
   height: auto;
   padding: 50px;
   object-fit: cover;
@@ -207,15 +206,16 @@ li a:hover {
 }
 
 .actor-movie-container {
-  padding: 20px;
+  /* padding: 20px;
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(165px, 1fr));
   gap: 10px;
   background-size: cover;
-  color: var(--primary-color);
+  color: var(--primary-color); */
 }
 
 .actor-card {
+  width: 250px;
   background-color: var(--light-color);
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0,0,0,0.3);
