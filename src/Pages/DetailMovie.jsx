@@ -56,9 +56,9 @@ const DetailMovie = () => {
                 </div>
             </div>
             <h1 className="cast-title">Cast</h1>
-            <div className="container grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 mx-auto gap-4">
+            <div className="container grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 mx-auto justify-items-center">
                 {cast.slice(0,10).map((actor) => (
-                    <div className="actor-card" key={actor.id}>
+                    <div className="bg-gray-800/75 text" key={actor.id}>
                         <img src={`https://image.tmdb.org/t/p/w200/${actor.profile_path}`} alt="" />
                         <p style={{ fontWeight : "bold" }}>{actor.name}</p>
                         <p>{actor.character}</p>
