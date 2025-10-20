@@ -19,8 +19,9 @@ const Home = ({movies, setMovies}) => {
       <main id='top'>
         <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 mx-auto container">
           {movies.map((movie) => (
-              <a href={`/detail/${movie.id}`} className="card-film" key={movie.id}>
+            <a href={`/detail/${movie.id}`} className="card-film" key={movie.id}>
                 <div className="img-film">
+                  {!movie.poster_path && <span className='w-full h-[320px] flex items-center justify-center bg-stone-700 text-gray-300 rounded-lg'>Image Not Foound</span>}
                   <img src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`} alt="" />
                 </div>
                 <div className="content-film">
