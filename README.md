@@ -17,8 +17,8 @@
 ## 🛠️ Teknologi
 
 - HTML / CSS / JavaScript
-- React (dengan Create React App) :contentReference[oaicite:1]{index=1}
-- API eksternal (opsional, tergantung implementasi di kode kamu)
+- React JS
+- API eksternal The Movie DataBase (TMDB)
 
 ---
 
