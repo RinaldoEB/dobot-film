@@ -7,6 +7,7 @@ import Navbar from './Pages/Navbar';
 import Contact from './Pages/Contact';
 
 function App() {
+  
   const[movies, setMovies] = useState([]);
  return (
 

@@ -1,5 +1,4 @@
 import { useState } from "react";
-import { API_KEY } from "../config";
 import { data, useNavigate, useParams } from "react-router-dom";
 const Navbar = ({setMovies}) => {
   const navigate = useNavigate();
@@ -7,7 +6,7 @@ const Navbar = ({setMovies}) => {
   const[search, setSearch] = useState("");
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const fetchGenres = () => {
-    const genre_URL = `https://api.themoviedb.org/3/genre/movie/list?api_key=${API_KEY}`
+    const genre_URL = `http://localhost:3002/api/movies/genre`
     fetch(genre_URL)
     .then(res => res.json())
     .then(data => setGenres(data.genres))
@@ -15,7 +14,7 @@ const Navbar = ({setMovies}) => {
   }
 
   const handleGenreClick = (id) => {
-    const URL = `https://api.themoviedb.org/3/discover/movie?api_key=${API_KEY}&with_genres=${id}`;
+    const URL = `http://localhost:3002/api/movies/genres/${id}`;
     fetch(URL)
     .then(res => res.json())
     .then(data => setMovies(data.results))
@@ -27,7 +26,7 @@ const Navbar = ({setMovies}) => {
               navigate(`/`);
               setSearch("");
               
-              const URL = `https://api.themoviedb.org/3/search/movie?api_key=${API_KEY}&query=${search}`;
+              const URL = `http://localhost:3002/api/movies/search?query=${search}`;
               fetch(URL)
               .then(res => res.json())
               .then(data => setMovies(data.results))
