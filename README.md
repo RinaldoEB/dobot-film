@@ -30,3 +30,7 @@ Pastikan kamu punya **Node.js** & **npm** atau **yarn**:
    ```bash
    git clone https://github.com/rinaldoEB/dobot-film.git
    cd dobot-film
+
+2. Run Code
+   ```bash
+   npm start 
