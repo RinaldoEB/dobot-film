@@ -30,13 +30,3 @@ Pastikan kamu punya **Node.js** & **npm** atau **yarn**:
    ```bash
    git clone https://github.com/rinaldoEB/dobot-film.git
    cd dobot-film
-
-2. Npm Install
-   ```bash
-   npm install
-   npm install tailwindcss @tailwindcss/cli
-
-3. Npm Run
-   ```bash
-   npm run
-   
