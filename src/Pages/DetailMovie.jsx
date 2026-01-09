@@ -2,6 +2,7 @@ import { useEffect , useState} from "react";
 import { data, useParams } from "react-router-dom";
 
 const DetailMovie = () => {
+    const API_KEY = "9619524c9830758fbe8d040ba40b9974";
 
 
     const [detail, setDetail] = useState([]);
@@ -10,13 +11,13 @@ const DetailMovie = () => {
     const {id} = useParams();
     useEffect(() => {
         const fetchDetail = async () => {
-            const res = await fetch(`http://localhost:3002/api/movies/detail/${id}`);
+            const res = await fetch(`https://api.themoviedb.org/3/movie/${id}?api_key=${API_KEY}`);
             const data = await res.json();
             setDetail(data);
         }
 
         const fetchCast = async () => {
-            const res = await fetch(`http://localhost:3002/api/movies/detail/cast/${id}`);
+            const res = await fetch(`https://api.themoviedb.org/3/movie/${id}/credits?api_key=${API_KEY}`);
             const data = await res.json();
             setCast(data.cast);
         }
@@ -33,9 +34,6 @@ const DetailMovie = () => {
         <>
             <div className="min-h-screen">
                 <div className="detail-movie-container text-white" style={{  backgroundImage: ` linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(https://image.tmdb.org/t/p/original/${detail.backdrop_path})` }}>
-                    <div className="">
-                        <a href="/" className="mx-8 px-4 py-2 bg-blue-500 text-white text-xl rounded-lg hover:bg-blue-700 transition duration-300">Back</a>
-                    </div>
                     <div className="detail-movie-poster">
                         <img src={`https://image.tmdb.org/t/p/w500/${detail.poster_path}`} alt={detail.title} />
                     </div>

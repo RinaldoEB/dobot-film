@@ -1,9 +1,10 @@
 import {useState , useEffect} from 'react';
+import { API_KEY,BASE_URL } from '../config';
 
 const Home = ({movies, setMovies}) => {
   
   useEffect(() => {
-    const URL = `http://localhost:3002/api/movies`;
+    const URL = `https://api.themoviedb.org/3/movie/popular?api_key=${API_KEY}`;
     fetch(URL)
     .then(res => res.json())
     .then(data => setMovies(data.results))
